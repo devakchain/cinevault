@@ -1,75 +1,182 @@
-# React + TypeScript + Vite
+# CineVault
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CineVault is a modern movie and TV discovery platform built with React, TypeScript, and modern frontend technologies.
 
-Currently, two official plugins are available:
+The application provides users with a premium cinematic experience for discovering movies and TV shows, viewing detailed information, managing personal watchlists, saving favorites, and rating content.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The project focuses on clean architecture, responsive design, smooth user interactions, and scalable frontend development practices.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+### Movie & TV Discovery
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Browse trending movies and TV shows
+- Explore popular, top-rated, and upcoming content
+- Search for movies and series
+- View detailed information about titles
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Personal Content Management
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Add movies to a personal watchlist
+- Mark movies as watched
+- Save favorite movies
+- Rate movies with a custom rating system
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Movie Details
+
+- Detailed movie information
+- Cast information
+- Genres
+- Ratings
+- Runtime
+- Trailers
+- Recommended movies
+
+### User Experience
+
+- Responsive design for desktop, tablet, and mobile
+- Smooth animations and transitions
+- Modern dark cinematic interface
+- Optimized loading states
+- Interactive movie cards
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- React
+- TypeScript
+- Tailwind CSS
+- React Router
+- React Query
+- Zustand
+- Framer Motion
+
+### API
+
+- TMDB API
+
+### Development Tools
+
+- Vite
+- Git
+- GitHub
+- ESLint
+
+---
+
+## Project Structure
 
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+src
+|
+├── api
+|   └── tmdb.ts
+|
+├── components
+|   ├── Hero
+|   ├── MovieCard
+|   ├── MovieRow
+|   ├── Navbar
+|   └── CastCard
+|
+├── hooks
+|
+├── layouts
+|
+├── pages
+|   ├── Home
+|   ├── MovieDetails
+|   ├── TVDetails
+|   ├── Search
+|   └── Profile
+|
+├── store
+|
+└── types
 ```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/devakchain/cinevault.git
+```
+
+Navigate to the client directory:
+
+```bash
+cd cinevault/client
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file:
+
+```env
+VITE_TMDB_API_KEY=your_api_key_here
+```
+
+---
+
+## Architecture
+
+CineVault follows a component-based architecture with clear separation between:
+
+- UI components
+- Pages
+- API services
+- State management
+- Custom hooks
+- Shared types
+
+The application uses React Query for server-state management and Zustand for client-side state management.
+
+---
+
+## Future Improvements
+
+Planned improvements:
+
+- Backend authentication system
+- User accounts and profiles
+- Database integration
+- Social features
+- AI-powered recommendations
+- Advanced search and filtering
+- Deployment pipeline
+
+---
+
+## Author
+
+Shmuel Yitzhak
+
+Full Stack Developer focused on building modern web applications with scalable architecture and high-quality user experiences.
+
+---
+
+## Status
+
+Active development.
